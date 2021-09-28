@@ -7,7 +7,7 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
+  comment = "#",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
@@ -19,7 +19,11 @@ knitr::opts_chunk$set(
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-_Action Squirrel_ is a (very work-in-progress) interactive R-console experience ('game') made with [the {R6} package](https://r6.r-lib.org/).
+_Action Squirrel_ is a (very work-in-progress) interactive visual experience ('game') in the R console, made with [the {R6} package](https://r6.r-lib.org/).
+
+You play as the titular Action Squirrel. Move around and collect nuts for winter.
+
+TODO: gamification. See [the issues](https://github.com/matt-dray/ActionSquirrel/issues) and submit your own ideas.
 
 ## Install
 
@@ -32,14 +36,14 @@ remotes::install_github("matt-dray/ActionSquirrel")
 
 ## How to play
 
-Start with `ActionSquirrel$new()`. This will first clear the console.
+Start with `ActionSquirrel$new()`. This clears the console and generates the overworld, including the player squirrel.
 
 ```{r}
 library(ActionSquirrel)
 x <- ActionSquirrel$new()
 ```
 
-Use the `move()` method to move Action Squirrel. Again, the console will first be cleared.
+Use the `move()` method to move the squirrel.
 
 Go up!
 
@@ -66,16 +70,6 @@ x$move("left")
 ```
 
 Note that Action Squirrel is not as big as a tree. It's just perspective.
-
-## TODO
-
-* Handle hard boundary
-* Add random nut
-* Tally nut points
-* Add enemy
-* Add timer/step count
-* Play through seasons?
-* Gamify properly
 
 ## Thanks
 

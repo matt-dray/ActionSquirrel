@@ -2,8 +2,8 @@
   packageStartupMessage(
     paste0(
       "Welcome to {ActionSquirrel}!\n",
-      "• Start game: x <- ActionSquirrel$new()\n",
-      "• Move: x$move('up')"
+      "* Start: x <- ActionSquirrel$new()\n",
+      "* Move: x$move('up')"
     )
   )
 }

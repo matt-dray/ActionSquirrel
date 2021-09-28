@@ -1,3 +1,7 @@
+# ActionSquirrel 0.0.0.9001
+
+* Add logic to warn player about reaching the edge (#1)
+
 # ActionSquirrel 0.0.0.9000
 
 * Set up package with DESCRIPTION, README, license, CoC, NEWS, .gitignore

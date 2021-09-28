@@ -1,5 +1,5 @@
 Package: ActionSquirrel
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Title: Generate An R6-Class 'Action Squirrel' Game
 Description: Prints to the console a grid of emoji representing an overworld,
     including a player character that can be controlled by the user.
