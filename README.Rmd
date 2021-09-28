@@ -1,0 +1,91 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ActionSquirrel
+
+<!-- badges: start -->
+[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+<!-- badges: end -->
+
+_Action Squirrel_ is a (very work-in-progress) interactive R-console experience ('game') made with [the {R6} package](https://r6.r-lib.org/).
+
+## Install
+
+Available from GitHub only.
+
+```{r eval= FALSE}
+install.packages("remotes")  # if not installed already
+remotes::install_github("matt-dray/ActionSquirrel")
+```
+
+## How to play
+
+Start with `ActionSquirrel$new()`. This will first clear the console.
+
+```{r}
+library(ActionSquirrel)
+x <- ActionSquirrel$new()
+```
+
+Use the `move()` method to move Action Squirrel. Again, the console will first be cleared.
+
+Go up!
+
+```{r}
+x$move("up")
+```
+
+Right!
+
+```{r}
+x$move("right")
+```
+
+Down!
+
+```{r}
+x$move("down")
+```
+
+Other right!
+
+```{r}
+x$move("left")
+```
+
+Note that Action Squirrel is not as big as a tree. It's just perspective.
+
+## TODO
+
+* Handle hard boundary
+* Add random nut
+* Tally nut points
+* Add enemy
+* Add timer/step count
+* Play through seasons?
+* Gamify properly
+
+## Thanks
+
+Inspired in part by [Tomaz's 'Little Useless-Useful R Functions'](https://tomaztsql.wordpress.com/2021/09/13/little-useless-useful-r-functions-year-progress-bar/).
+
+Thanks to Winston Chang for [the {R6} package](https://r6.r-lib.org/).
+
+## Similar projects
+
+I've done some other silly things with {R6}. You can:
+
+* [play a text-based version of _Pokemon Blue_'s Safari Zone in R](https://www.rostrum.blog/2021/01/04/safar6/)
+* [repay your loan to _Animal Crossing_'s Tom Nook with an Automatic Bell Dispenser](https://www.rostrum.blog/2020/04/04/repaying-tom-nook-with-r6/)

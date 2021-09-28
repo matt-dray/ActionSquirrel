@@ -1,0 +1,18 @@
+Package: ActionSquirrel
+Version: 0.0.0.9000
+Title: Generate An R6-Class 'Action Squirrel' Game
+Description: Prints to the console a grid of emoji representing an overworld,
+    including a player character that can be controlled by the user.
+Authors@R: person(
+    "Matt", "Dray",
+    email = "mwdray@gmail.com", 
+    role = c("aut", "cre"))
+URL: https://github.com/matt-dray/ActionSquirrel
+BugReports: https://github.com/matt-dray/ActionSquirrel/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    R6
