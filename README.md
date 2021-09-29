@@ -124,7 +124,9 @@ your own ideas.
 Inspired in part by [Tomaz’s ‘Little Useless-Useful R
 Functions’](https://tomaztsql.wordpress.com/2021/09/13/little-useless-useful-r-functions-year-progress-bar/).
 
-Thanks to Winston Chang for [the {R6} package](https://r6.r-lib.org/).
+Thanks to Winston Chang for [the {R6} package](https://r6.r-lib.org/),
+and Stefan Siegert and Robin Williams for
+[{sonify}](https://CRAN.R-project.org/package=sonify).
 
 ## Similar projects
 
