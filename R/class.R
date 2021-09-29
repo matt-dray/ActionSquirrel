@@ -78,8 +78,14 @@ ActionSquirrel <- R6::R6Class(
       if (where == "right") { move_n <- +1}
       self$s_loc <- self$s_loc + move_n
 
+      # Move sound
+      if (self$s_loc != self$n_loc) {
+        sonify::sonify(1, 1, duration = 0.01)
+      }
+
       # Nut capture routine
       if (self$s_loc == self$n_loc) {
+        sonify::sonify(c(1, 0), c(1, 0), duration = 0.1)
         self$nuts <- self$nuts + 1 # increment nut tally
         self$n_loc <- sample(seq(25)[-self$s_loc], 1)  # new nut location
       }
