@@ -22,14 +22,20 @@ ActionSquirrel <- R6::R6Class(
 
     # FIELDS ----
 
-    #' @field x_loc Numeric. The location of the squirrel
-    x_loc = ceiling(25 / 2),
-
     #' @field overworld Character vector. The overworld in one dimension.
     overworld = rep("\U1F333", 25),
 
+    #' @field s_loc Numeric. The location of the squirrel.
+    s_loc = 13,
+
+    #' @field n_loc Numeric. The location of the nut.
+    n_loc = 7,
+
     #' @field moves Numeric. The number of moves made by the player.
     moves = 0,
+
+    #' @field nuts Numeric. The number of nuts collected by the player.
+    nuts = 0,
 
     # METHODS ----
 
@@ -38,13 +44,14 @@ ActionSquirrel <- R6::R6Class(
     #' @return An R6-class object.
     initialize = function(...) {
 
-      self$overworld[self$x_loc] <- "\U1F43F"
+      self$overworld[self$n_loc] <- "\U1F330"
+      self$overworld[self$s_loc] <- "\U1F43F"
       overworld_mat <- matrix(self$overworld, nrow = 5)
       cat("\014")
       for (i in seq(nrow(overworld_mat))) {
         cat(overworld_mat[i, ], "\n")
       }
-      cat("Moves:", self$moves)
+      cat("Moves:", self$moves, "\nNuts:", self$nuts)
 
     },
 
@@ -54,33 +61,44 @@ ActionSquirrel <- R6::R6Class(
     #' @return An R6-class object.
     move = function(where) {
 
+      # Stop at grid edge
       if (
-        (where == "up"    & self$x_loc %in% 1:5) |
-        (where == "down"  & self$x_loc %in% 21:25) |
-        (where == "left"  & self$x_loc %in% seq(1, 25, 5)) |
-        (where == "right" & self$x_loc %in% seq(5, 25, 5))
+        (where == "up" & self$s_loc %in% 1:5) |
+        (where == "down" & self$s_loc %in% 21:25) |
+        (where == "left" & self$s_loc %in% seq(1, 25, 5)) |
+        (where == "right" & self$s_loc %in% seq(5, 25, 5))
       ) {
         return(cat("You reached the edge.\nTry another direction."))
       }
 
+      # Increment grid location
       if (where == "up")    { move_n <- -5}
       if (where == "down")  { move_n <- +5}
       if (where == "left")  { move_n <- -1}
       if (where == "right") { move_n <- +1}
+      self$s_loc <- self$s_loc + move_n
 
-      self$x_loc <- self$x_loc + move_n
+      # Nut capture routine
+      if (self$s_loc == self$n_loc) {
+        self$nuts <- self$nuts + 1 # increment nut tally
+        self$n_loc <- sample(seq(25)[-self$s_loc], 1)  # new nut location
+      }
+
+      # Create grid
       self$overworld <- rep("\U1F333", 25)
-      self$overworld[self$x_loc] <- "\U1F43F️"
+      self$overworld[self$n_loc] <- "\U1F330"
+      self$overworld[self$s_loc] <- "\U1F43F️"
       overworld_mat <- t(matrix(self$overworld, nrow = 5))
 
+      # Clear console, print grid
       cat("\014")
-
       for (row in seq(nrow(overworld_mat))) {
         cat(overworld_mat[row, ], "\n")
       }
 
+      # Increment move tally, Print move and nut tallies
       self$moves <- self$moves + 1
-      cat("Moves:", self$moves)
+      cat("Moves:", self$moves, "\nNuts:", self$nuts)
 
     }
 
