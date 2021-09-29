@@ -38,8 +38,9 @@ library(ActionSquirrel)
 
 ### Start
 
-Run `ActionSquirrel$new()`. This clears the console and generates a
-forest that contains Action Squirrel. And a delicious nut!
+Initiate by assigning `ActionSquirrel$new()` to a name. This clears the
+console and generates a forest that contains Action Squirrel. And a
+delicious nut!
 
 ``` r
 x <- ActionSquirrel$new()
