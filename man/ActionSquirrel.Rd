@@ -26,11 +26,15 @@ Also provides a live tally of moves taken.
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{x_loc}}{Numeric. The location of the squirrel}
-
 \item{\code{overworld}}{Character vector. The overworld in one dimension.}
 
+\item{\code{s_loc}}{Numeric. The location of the squirrel.}
+
+\item{\code{n_loc}}{Numeric. The location of the nut.}
+
 \item{\code{moves}}{Numeric. The number of moves made by the player.}
+
+\item{\code{nuts}}{Numeric. The number of nuts collected by the player.}
 }
 \if{html}{\out{</div>}}
 }
