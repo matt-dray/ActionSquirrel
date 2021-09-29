@@ -72,7 +72,7 @@ x$move("up")
 # Nuts: 0
 ```
 
-Congratulations, your move tally has increased by one.
+Congratulations, your move tally has increased by one!
 
 ``` r
 x$move("left")
@@ -85,8 +85,10 @@ x$move("left")
 # Nuts: 1
 ```
 
-Congratulations, your nut tally has increased by one. And there’s a new
+Congratulations, your nut tally has increased by one! And there’s a new
 nut!
+
+Did I mention there’s sound effects? You’ll have to play it to find out.
 
 ### Limits
 

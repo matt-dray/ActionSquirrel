@@ -57,13 +57,15 @@ You control Action Squirrel. Use the `move()` method to move through the forest 
 x$move("up")
 ```
 
-Congratulations, your move tally has increased by one.
+Congratulations, your move tally has increased by one!
 
 ```{r}
 x$move("left")
 ```
 
-Congratulations, your nut tally has increased by one. And there's a new nut!
+Congratulations, your nut tally has increased by one! And there's a new nut!
+
+Did I mention there's sound effects? You'll have to play it to find out.
 
 ### Limits
 

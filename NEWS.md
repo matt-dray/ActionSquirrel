@@ -1,3 +1,7 @@
+# ActionSquirrel 0.0.0.9003
+
+* Add sound effects for movement and nut capture (#9).
+
 # ActionSquirrel 0.0.0.9002
 
 * Add logic to place and intercept nuts, and increase nut tally (#2).
