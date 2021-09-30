@@ -1,6 +1,8 @@
 # ActionSquirrel 0.0.0.9004
 
 * Add owl AI (#3).
+* Add death outcome.
+* Add game 'end' (#4).
 
 # ActionSquirrel 0.0.0.9003
 
