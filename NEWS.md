@@ -1,6 +1,7 @@
 # ActionSquirrel 0.0.0.9003
 
 * Add sound effects for movement and nut capture (#9).
+* Confine `move` method direction options (#6)
 
 # ActionSquirrel 0.0.0.9002
 

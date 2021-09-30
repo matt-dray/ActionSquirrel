@@ -40,9 +40,8 @@ ActionSquirrel <- R6::R6Class(
     # METHODS ----
 
     #' @description Create a new overworld.
-    #' @param ... The dots.
     #' @return An R6-class object.
-    initialize = function(...) {
+    initialize = function() {
 
       self$overworld[self$n_loc] <- "\U1F330"
       self$overworld[self$s_loc] <- "\U1F43F"
@@ -59,7 +58,9 @@ ActionSquirrel <- R6::R6Class(
     #' @param where Character. Which direction to move. One of \code{"up"},
     #'      \code{"down"}, \code{"left"} and \code{"right"}.
     #' @return An R6-class object.
-    move = function(where) {
+    move = function(where = c("up", "down", "left", "right")) {
+
+      where <- match.arg(where)
 
       # Stop at grid edge
       if (

@@ -52,16 +52,9 @@ Also provides a live tally of moves taken.
 \subsection{Method \code{new()}}{
 Create a new overworld.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$new(...)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$new()}\if{html}{\out{</div>}}
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{The dots.}
-}
-\if{html}{\out{</div>}}
-}
 \subsection{Returns}{
 An R6-class object.
 }
@@ -72,7 +65,7 @@ An R6-class object.
 \subsection{Method \code{move()}}{
 Move the hero around the overworld.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$move(where)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$move(where = c("up", "down", "left", "right"))}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

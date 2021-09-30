@@ -53,8 +53,8 @@ x <- ActionSquirrel$new()
 # Nuts: 0
 ```
 
-Note: neither Action Squirrel nor the nuts are as big as a tree. It’s
-just perspective.
+Note: neither Action Squirrel nor the nut is as big as a tree. It’s just
+perspective.
 
 ### Move
 
@@ -95,7 +95,7 @@ Did I mention there’s sound effects? You’ll have to play it to find out.
 Thinking of escape?
 
 ``` r
-x$move("up")
+x$move("u")  # can use first letter of direction
 # 🌳 🐿️ 🌳 🌰 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
