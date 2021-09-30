@@ -26,10 +26,13 @@ ActionSquirrel <- R6::R6Class(
     overworld = rep("\U1F333", 25),
 
     #' @field s_loc Numeric. The location of the squirrel.
-    s_loc = 13,
+    s_loc = 14,
 
     #' @field n_loc Numeric. The location of the nut.
-    n_loc = 7,
+    n_loc = 8,
+
+    #' @field o_loc Numeric. The location of the owl.
+    o_loc = 17,
 
     #' @field moves Numeric. The number of moves made by the player.
     moves = 0,
@@ -45,7 +48,8 @@ ActionSquirrel <- R6::R6Class(
 
       self$overworld[self$n_loc] <- "\U1F330"
       self$overworld[self$s_loc] <- "\U1F43F"
-      overworld_mat <- matrix(self$overworld, nrow = 5)
+      self$overworld[self$o_loc] <- "\U1F989"
+      overworld_mat <- t(matrix(self$overworld, nrow = 5))
       cat("\014")
       for (i in seq(nrow(overworld_mat))) {
         cat(overworld_mat[i, ], "\n")
@@ -91,10 +95,29 @@ ActionSquirrel <- R6::R6Class(
         self$n_loc <- sample(seq(25)[-self$s_loc], 1)  # new nut location
       }
 
+      # Owl move
+      # corners
+      if (self$o_loc == 1)  { o_move <- sample(c( 1,  5), 1) }
+      if (self$o_loc == 5)  { o_move <- sample(c(-1,  5), 1) }
+      if (self$o_loc == 21) { o_move <- sample(c( 1, -5), 1) }
+      if (self$o_loc == 25) { o_move <- sample(c(-1, -5), 1) }
+      # edges
+      if (self$o_loc %in% 2:4)           { o_move <- sample(c(-1,  1,  5), 1) }
+      if (self$o_loc %in% c(6, 11, 16))  { o_move <- sample(c( 1, -5,  5), 1) }
+      if (self$o_loc %in% c(10, 15, 20)) { o_move <- sample(c(-1, -5,  5), 1) }
+      if (self$o_loc %in% 22:24)         { o_move <- sample(c(-1,  1, -5), 1) }
+      # middle
+      if (self$o_loc %in% c(7:9, 12:14, 17:19)) {
+        o_move <- sample(c(1, -1, 5, -5), 1)
+      }
+
+      self$o_loc <- self$o_loc + o_move
+
       # Create grid
       self$overworld <- rep("\U1F333", 25)
       self$overworld[self$n_loc] <- "\U1F330"
       self$overworld[self$s_loc] <- "\U1F43F️"
+      self$overworld[self$o_loc] <- "\U1F989"
       overworld_mat <- t(matrix(self$overworld, nrow = 5))
 
       # Clear console, print grid

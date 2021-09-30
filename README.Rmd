@@ -20,7 +20,7 @@ set.seed(1)
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-{ActionSquirrel} is an R package containing a (very work-in-progress) interactive visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel. Move around and collect nuts for winter.
+{ActionSquirrel} is an R package containing a (very work-in-progress) interactive visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel. Move around and collect nuts for winter, while avoiding the predatory owl.
 
 ## How to play
 
@@ -41,17 +41,17 @@ library(ActionSquirrel)
 
 ### Start
 
-Initiate by assigning `ActionSquirrel$new()` to a name. This clears the console and generates a forest that contains Action Squirrel. And a delicious nut!
+Initiate by assigning `ActionSquirrel$new()` to a name. This clears the console and generates a forest that contains Action Squirrel. And a delicious nut! And a scary owl!
 
 ```{r}
 x <- ActionSquirrel$new()
 ```
 
-Note: neither Action Squirrel nor the nut is as big as a tree. It's just perspective.
+Note: Action Squirrel nor the nut nor the owl are as big as a tree. It's just perspective.
 
 ### Move
 
-You control Action Squirrel. Use the `move()` method to move through the forest and grab the nuts.
+You control Action Squirrel. Use the `move()` method to move through the forest and grab the nuts. Make sure not to be eaten by the owl.
 
 ```{r}
 x$move("up")

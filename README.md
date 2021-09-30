@@ -14,7 +14,8 @@ proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https:
 {ActionSquirrel} is an R package containing a (very work-in-progress)
 interactive visual experience (‘game’) in the R console, powered by
 [{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel.
-Move around and collect nuts for winter.
+Move around and collect nuts for winter, while avoiding the predatory
+owl.
 
 ## How to play
 
@@ -40,33 +41,33 @@ library(ActionSquirrel)
 
 Initiate by assigning `ActionSquirrel$new()` to a name. This clears the
 console and generates a forest that contains Action Squirrel. And a
-delicious nut!
+delicious nut! And a scary owl!
 
 ``` r
 x <- ActionSquirrel$new()
 # 🌳 🌳 🌳 🌳 🌳 
-# 🌳 🌰 🌳 🌳 🌳 
-# 🌳 🌳 🐿 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
+# 🌳 🌳 🌰 🌳 🌳 
+# 🌳 🌳 🌳 🐿 🌳 
+# 🌳 🦉 🌳 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # Moves: 0 
 # Nuts: 0
 ```
 
-Note: neither Action Squirrel nor the nut is as big as a tree. It’s just
-perspective.
+Note: Action Squirrel nor the nut nor the owl are as big as a tree. It’s
+just perspective.
 
 ### Move
 
 You control Action Squirrel. Use the `move()` method to move through the
-forest and grab the nuts.
+forest and grab the nuts. Make sure not to be eaten by the owl.
 
 ``` r
 x$move("up")
 # 🌳 🌳 🌳 🌳 🌳 
-# 🌳 🌰 🐿️ 🌳 🌳 
+# 🌳 🌳 🌰 🐿️ 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
+# 🌳 🌳 🦉 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # Moves: 1 
 # Nuts: 0
@@ -77,10 +78,10 @@ Congratulations, your move tally has increased by one!
 ``` r
 x$move("left")
 # 🌳 🌳 🌳 🌰 🌳 
-# 🌳 🐿️ 🌳 🌳 🌳 
+# 🌳 🌳 🐿️ 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
+# 🌳 🌳 🦉 🌳 🌳 
 # Moves: 2 
 # Nuts: 1
 ```
@@ -96,11 +97,11 @@ Thinking of escape?
 
 ``` r
 x$move("u")  # can use first letter of direction
-# 🌳 🐿️ 🌳 🌰 🌳 
+# 🌳 🌳 🐿️ 🌰 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
 # 🌳 🌳 🌳 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
+# 🌳 🦉 🌳 🌳 🌳 
 # Moves: 3 
 # Nuts: 1
 ```
