@@ -26,10 +26,13 @@ ActionSquirrel <- R6::R6Class(
     overworld = rep("\U1F333", 25),
 
     #' @field s_loc Numeric. The location of the squirrel.
-    s_loc = 13,
+    s_loc = 14,
 
     #' @field n_loc Numeric. The location of the nut.
-    n_loc = 7,
+    n_loc = 8,
+
+    #' @field o_loc Numeric. The location of the owl.
+    o_loc = 17,
 
     #' @field moves Numeric. The number of moves made by the player.
     moves = 0,
@@ -45,7 +48,8 @@ ActionSquirrel <- R6::R6Class(
 
       self$overworld[self$n_loc] <- "\U1F330"
       self$overworld[self$s_loc] <- "\U1F43F"
-      overworld_mat <- matrix(self$overworld, nrow = 5)
+      self$overworld[self$o_loc] <- "\U1F989"
+      overworld_mat <- t(matrix(self$overworld, nrow = 5))
       cat("\014")
       for (i in seq(nrow(overworld_mat))) {
         cat(overworld_mat[i, ], "\n")
@@ -91,10 +95,43 @@ ActionSquirrel <- R6::R6Class(
         self$n_loc <- sample(seq(25)[-self$s_loc], 1)  # new nut location
       }
 
-      # Create grid
-      self$overworld <- rep("\U1F333", 25)
-      self$overworld[self$n_loc] <- "\U1F330"
-      self$overworld[self$s_loc] <- "\U1F43F️"
+      # Owl move
+      # corners
+      if (self$o_loc == 1)  { o_move <- sample(c(0,  1,  5), 1) }
+      if (self$o_loc == 5)  { o_move <- sample(c(0, -1,  5), 1) }
+      if (self$o_loc == 21) { o_move <- sample(c(0,  1, -5), 1) }
+      if (self$o_loc == 25) { o_move <- sample(c(0, -1, -5), 1) }
+      # edges
+      if (self$o_loc %in% 2:4)           { o_move <- sample(c(0, -1,  1,  5), 1) }
+      if (self$o_loc %in% c(6, 11, 16))  { o_move <- sample(c(0,  1, -5,  5), 1) }
+      if (self$o_loc %in% c(10, 15, 20)) { o_move <- sample(c(0, -1, -5,  5), 1) }
+      if (self$o_loc %in% 22:24)         { o_move <- sample(c(0, -1,  1, -5), 1) }
+      # middle
+      if (self$o_loc %in% c(7:9, 12:14, 17:19)) {
+        o_move <- sample(c(0, 1, -1, 5, -5), 1)
+      }
+      # increment
+      self$o_loc <- self$o_loc + o_move
+
+      # Create 1D grid
+      if (self$moves == 29) {
+        self$overworld <- sample(c("\U1F384", "\U26C4", "\U1F328"), 25, TRUE)
+        self$overworld[1] <- "\U1F43F️"
+        self$overworld[2] <- "\U1F4A4"
+        self$overworld[2:self$nuts + 1] <- "\U1F330"
+      } else {
+        self$overworld <- rep("\U1F333", 25)
+        self$overworld[self$n_loc] <- "\U1F330"
+        self$overworld[self$s_loc] <- "\U1F43F️"
+        self$overworld[self$o_loc] <- "\U1F989"
+      }
+
+      # Death emoji
+      if (self$s_loc == self$o_loc) {
+        self$overworld[self$o_loc] <- "\U1F480"
+      }
+
+      # Create 2D grid
       overworld_mat <- t(matrix(self$overworld, nrow = 5))
 
       # Clear console, print grid
@@ -103,9 +140,25 @@ ActionSquirrel <- R6::R6Class(
         cat(overworld_mat[row, ], "\n")
       }
 
-      # Increment move tally, Print move and nut tallies
+      # Increment move tally, print move and nut tallies
       self$moves <- self$moves + 1
       cat("Moves:", self$moves, "\nNuts:", self$nuts)
+
+      # Owl attack routine
+      if (self$s_loc == self$o_loc) {
+        sonify::sonify(c(0, 2, 1), c(1, 1, 1), duration = 1)
+        cat("\nD E A D !")
+      }
+
+      # End game routine
+      if (self$moves == 30) {
+        i <- 1
+        while (i < 4) {
+          i <- i + 1
+          sonify::sonify(c(0, 1), rep(1, 2), duration = 0.2)
+        }
+        cat("\nW I N !\n")
+      }
 
     }
 

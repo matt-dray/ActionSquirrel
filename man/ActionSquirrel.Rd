@@ -32,6 +32,8 @@ Also provides a live tally of moves taken.
 
 \item{\code{n_loc}}{Numeric. The location of the nut.}
 
+\item{\code{o_loc}}{Numeric. The location of the owl.}
+
 \item{\code{moves}}{Numeric. The number of moves made by the player.}
 
 \item{\code{nuts}}{Numeric. The number of nuts collected by the player.}

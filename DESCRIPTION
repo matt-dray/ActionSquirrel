@@ -1,9 +1,9 @@
 Package: ActionSquirrel
-Version: 0.0.0.9003
+Version: 0.0.0.9004
 Title: Generate An R6-Class 'Action Squirrel' Game
 Description: Prints to the console a grid of emoji representing a forest,
     including a player-controlled squirrel that can be controlled by the user
-    to collect nuts.
+    to collect nuts and avoid the owl.
 Authors@R: person(
     "Matt", "Dray",
     email = "mwdray@gmail.com", 

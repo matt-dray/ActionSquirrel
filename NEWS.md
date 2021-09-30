@@ -1,7 +1,13 @@
+# ActionSquirrel 0.0.0.9004
+
+* Add owl AI (#3).
+* Add death outcome.
+* Add game 'end' (#4).
+
 # ActionSquirrel 0.0.0.9003
 
 * Add sound effects for movement and nut capture (#9).
-* Confine `move` method direction options (#6)
+* Confine `move` method direction options (#6).
 
 # ActionSquirrel 0.0.0.9002
 

@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-set.seed(1)
+set.seed(2)
 ```
 
 # ActionSquirrel
@@ -20,7 +20,7 @@ set.seed(1)
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 <!-- badges: end -->
 
-{ActionSquirrel} is an R package containing a (very work-in-progress) interactive visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel. Move around and collect nuts for winter.
+{ActionSquirrel} is an R package containing a (very work-in-progress) interactive visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel. Move around and collect nuts for winter, while avoiding the predatory owl.
 
 ## How to play
 
@@ -41,48 +41,41 @@ library(ActionSquirrel)
 
 ### Start
 
-Initiate by assigning `ActionSquirrel$new()` to a name. This clears the console and generates a forest that contains Action Squirrel. And a delicious nut!
+Initiate by assigning `ActionSquirrel$new()` to a name. This clears the console and generates a forest that contains Action Squirrel. And a delicious nut. And a scary owl!
 
 ```{r}
 x <- ActionSquirrel$new()
 ```
 
-Note: neither Action Squirrel nor the nut is as big as a tree. It's just perspective.
+Note: Action Squirrel nor the nut nor the owl are as big as a tree. It's just perspective.
 
 ### Move
 
-You control Action Squirrel. Use the `move()` method to move through the forest and grab the nuts.
+You control Action Squirrel. Use the `move()` method to move through the forest and grab the nuts. Make sure not to be eaten by the owl.
 
 ```{r}
 x$move("up")
 ```
 
-Congratulations, your move tally has increased by one!
+Congratulations, your move tally has increased by one.
+
+Did I mention there's sound effects? You'll have to play to find out.
+
+To the nut!
 
 ```{r}
 x$move("left")
 ```
 
-Congratulations, your nut tally has increased by one! And there's a new nut!
+Congratulations, your nut tally has increased by one. And there's a new nut!
 
-Did I mention there's sound effects? You'll have to play it to find out.
-
-### Limits
-
-Thinking of escape?
+Keep collecting nuts until winter arrives (30 moves). Collect as many nuts as possible without being eaten.
 
 ```{r}
-x$move("u")  # can use first letter of direction
-```
-```{r}
-x$move("up")
+x$move("left")
 ```
 
-There is no escape!
-
-## TODO
-
-Proper gamification. See [the issues](https://github.com/matt-dray/ActionSquirrel/issues) and submit your own ideas.
+Oops.
 
 ## Thanks
 
@@ -96,3 +89,9 @@ I've done some other silly things with {R6}. You can:
 
 * [play a text-based version of _Pokemon Blue_'s Safari Zone in R](https://www.rostrum.blog/2021/01/04/safar6/)
 * [repay your loan to _Animal Crossing_'s Tom Nook with an Automatic Bell Dispenser](https://www.rostrum.blog/2020/04/04/repaying-tom-nook-with-r6/)
+
+## Code of Conduct
+
+Add bugs or ideas to [the issues](https://github.com/matt-dray/ActionSquirrel/issues).
+
+Please note that the {ActionSquirrel} project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
