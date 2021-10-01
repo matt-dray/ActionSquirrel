@@ -44,6 +44,7 @@ Also provides a live tally of moves taken.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{ActionSquirrel$new()}}
+\item \href{#method-print}{\code{ActionSquirrel$print()}}
 \item \href{#method-move}{\code{ActionSquirrel$move()}}
 \item \href{#method-clone}{\code{ActionSquirrel$clone()}}
 }
@@ -55,6 +56,19 @@ Also provides a live tally of moves taken.
 Create a new overworld.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$new()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+An R6-class object.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-print"></a>}}
+\if{latex}{\out{\hypertarget{method-print}{}}}
+\subsection{Method \code{print()}}{
+Pause menu.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$print()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{

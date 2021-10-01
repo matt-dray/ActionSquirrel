@@ -93,6 +93,10 @@ x$move("left")
 Congratulations, your nut tally has increased by one. And there’s a new
 nut!
 
+Advanced tech: you only need the first letter of the direction, like
+`x$move("r")` for right, and you can chain moves together like
+`x$move("r")$move("d")` to go right then down.
+
 Keep collecting nuts until winter arrives (30 moves). Collect as many
 nuts as possible without being eaten.
 

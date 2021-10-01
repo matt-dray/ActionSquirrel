@@ -1,23 +1,28 @@
+# ActionSquirrel 0.0.0.9005
+
+* Allowed chaining of methods.
+* Created basic `print` method.
+
 # ActionSquirrel 0.0.0.9004
 
-* Add owl AI (#3).
-* Add death outcome.
-* Add game 'end' (#4).
+* Added owl AI (#3).
+* Added death outcome.
+* Added game 'end' (#4).
 
 # ActionSquirrel 0.0.0.9003
 
-* Add sound effects for movement and nut capture (#9).
-* Confine `move` method direction options (#6).
+* Added sound effects for movement and nut capture (#9).
+* Confined `move` method direction options (#6).
 
 # ActionSquirrel 0.0.0.9002
 
-* Add logic to place and intercept nuts, and increase nut tally (#2).
+* Added logic to place and intercept nuts, and increase nut tally (#2).
 
 # ActionSquirrel 0.0.0.9001
 
-* Add logic to warn player about reaching the edge (#1).
+* Added logic to warn player about reaching the edge (#1).
 
 # ActionSquirrel 0.0.0.9000
 
 * Set up package with DESCRIPTION, README, license, CoC, NEWS, .gitignore.
-* Add class.R, zzz.R.
+* Added class.R, zzz.R.

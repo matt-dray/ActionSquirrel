@@ -58,6 +58,13 @@ ActionSquirrel <- R6::R6Class(
 
     },
 
+    #' @description Pause menu.
+    #' @return An R6-class object.
+    print = function() {
+      cat("P A U S E")
+      invisible(self)
+    },
+
     #' @description Move the hero around the overworld.
     #' @param where Character. Which direction to move. One of \code{"up"},
     #'      \code{"down"}, \code{"left"} and \code{"right"}.
@@ -159,6 +166,8 @@ ActionSquirrel <- R6::R6Class(
         }
         cat("\nW I N !\n")
       }
+
+      invisible(self)
 
     }
 
