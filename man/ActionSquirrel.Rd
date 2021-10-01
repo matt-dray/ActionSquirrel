@@ -26,6 +26,8 @@ Also provides a live tally of moves taken.
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
+\item{\code{active}}{Logcial. Is the game in play?}
+
 \item{\code{overworld}}{Character vector. The overworld in one dimension.}
 
 \item{\code{s_loc}}{Numeric. The location of the squirrel.}
@@ -44,7 +46,7 @@ Also provides a live tally of moves taken.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{ActionSquirrel$new()}}
-\item \href{#method-print}{\code{ActionSquirrel$print()}}
+\item \href{#method-pause}{\code{ActionSquirrel$pause()}}
 \item \href{#method-move}{\code{ActionSquirrel$move()}}
 \item \href{#method-clone}{\code{ActionSquirrel$clone()}}
 }
@@ -63,12 +65,12 @@ An R6-class object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
-\subsection{Method \code{print()}}{
-Pause menu.
+\if{html}{\out{<a id="method-pause"></a>}}
+\if{latex}{\out{\hypertarget{method-pause}{}}}
+\subsection{Method \code{pause()}}{
+Pause menu with instructions.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$print()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{ActionSquirrel$pause()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{

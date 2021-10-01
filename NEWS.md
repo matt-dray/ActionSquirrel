@@ -1,3 +1,8 @@
+# ActionSquirrel 0.0.0.9006
+
+* Added 'active' state, preventing user from playing beyond a game over (#12).
+* Removed `print()` method, added `pause()` method.
+
 # ActionSquirrel 0.0.0.9005
 
 * Allowed chaining of methods.

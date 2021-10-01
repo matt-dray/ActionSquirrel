@@ -33,8 +33,9 @@ Attach the package for instructions.
 ``` r
 library(ActionSquirrel)
 # Welcome to {ActionSquirrel}!
-# * Start: x <- ActionSquirrel$new()
-# * Move: x$move('up')
+# * New game: x <- ActionSquirrel$new()
+# * Move:     e.g. x$move('up')
+# * Info:     x$pause()
 ```
 
 ### Start
@@ -109,7 +110,10 @@ x$move("left")
 # 🌳 🌳 🌳 🌳 🌳 
 # Moves: 3 
 # Nuts: 1
-# D E A D !
+# Y O U   D I E D !
+# G A M E   O V E R 
+# * New game: x <- ActionSquirrel$new() 
+# * Source:   github.com/matt-dray/ActionSquirrel
 ```
 
 Oops.
