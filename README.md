@@ -12,10 +12,12 @@ proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https:
 <!-- badges: end -->
 
 {ActionSquirrel} is an R package containing a (very work-in-progress)
-interactive visual experience (‘game’) in the R console, powered by
-[{R6}](https://r6.r-lib.org/). You play as the titular Action Squirrel.
-Move around and collect nuts for winter, while avoiding the predatory
-owl.
+interactive audio-visual experience (‘game’) in the R console, powered
+by [{R6}](https://r6.r-lib.org/).
+
+You play as the titular Action Squirrel. Move around the forest and
+collect at least eight nuts to survive winter, which happens after 30
+turns. Avoid being eaten by the owl.
 
 ## How to play
 
@@ -61,7 +63,7 @@ just perspective.
 ### Move
 
 You control Action Squirrel. Use the `move()` method to move through the
-forest and grab the nuts. Make sure not to be eaten by the owl.
+forest and grab the nuts, avoiding the owl.
 
 ``` r
 x$move("up")
@@ -74,9 +76,8 @@ x$move("up")
 # Nuts: 0
 ```
 
-Congratulations, your move tally has increased by one.
-
-Did I mention there’s sound effects? You’ll have to play to find out.
+Congratulations, your move tally has increased by one. Winter arrives
+after 30 turns and the game will end.
 
 To the nut!
 
@@ -92,31 +93,14 @@ x$move("left")
 ```
 
 Congratulations, your nut tally has increased by one. And there’s a new
-nut!
+nut! Collect at least eight, or you won’t survive winter.
 
 Advanced tech: you only need the first letter of the direction, like
 `x$move("r")` for right, and you can chain moves together like
 `x$move("r")$move("d")` to go right then down.
 
-Keep collecting nuts until winter arrives (30 moves). Collect as many
-nuts as possible without being eaten.
-
-``` r
-x$move("left")
-# 🌳 🌳 🌳 🌳 🌳 
-# 🌳 💀 🌳 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
-# 🌰 🌳 🌳 🌳 🌳 
-# 🌳 🌳 🌳 🌳 🌳 
-# Moves: 3 
-# Nuts: 1
-# Y O U   D I E D !
-# G A M E   O V E R 
-# * New game: x <- ActionSquirrel$new() 
-# * Source:   github.com/matt-dray/ActionSquirrel
-```
-
-Oops.
+I’ll leave it to the player to discover the consequences of being eaten,
+the endscreens and the sound effects.
 
 ## Thanks
 
