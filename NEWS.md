@@ -1,3 +1,7 @@
+# ActionSquirrel 0.0.0.9007
+
+* Added nut cache win/lose scenarios (#14).
+
 # ActionSquirrel 0.0.0.9006
 
 * Added 'active' state, preventing user from playing beyond a game over (#12).

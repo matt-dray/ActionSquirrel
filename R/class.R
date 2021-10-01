@@ -66,7 +66,7 @@ ActionSquirrel <- R6::R6Class(
     pause = function() {
       cat(
         "P A U S E\n",
-        "* Aim:       collect \U1F330, avoid \U1F989\n",
+        "* Aim:       get eight nuts before winter (30 moves)\n",
         "* Move:      e.g. x$move('up')\n",
         "* Chain:     e.g. x$move('u')$move('r')\n",
         "* New game:  x <- ActionSquirrel$new()\n",
@@ -95,12 +95,8 @@ ActionSquirrel <- R6::R6Class(
           (where == "right" & self$s_loc %in% seq(5, 25, 5))
         ) {
 
-          i <- 1
-          while (i < 3) {
-            sonify::sonify(1, 1, duration = 0.001)
-            i <- i + 1
-          }
-
+          sonify::sonify(1, 1, duration = 0.001)
+          sonify::sonify(1, 1, duration = 0.001)
           return(cat("You reached the edge.\nTry another direction."))
 
         }
@@ -143,11 +139,21 @@ ActionSquirrel <- R6::R6Class(
         self$o_loc <- self$o_loc + o_move
 
         # Create 1D grid
-        if (self$moves == 29) {
+        if (self$moves == 29) {  # end of game
+
           self$overworld <- sample(c("\U1F384", "\U26C4", "\U1F328"), 25, TRUE)
-          self$overworld[1] <- "\U1F43F️"
-          self$overworld[2] <- "\U1F4A4"
-          self$overworld[2:self$nuts + 1] <- "\U1F330"
+          self$overworld[1] <- "\U1F43F️" # squirrel
+
+          if (self$nuts < 8) {
+            nut_diff <- 8 - self$nuts
+            self$overworld[2] <- "\U1F480"  # skull
+            self$overworld[3:(self$nuts + 2)] <- "\U1F330"  # nut
+            self$overworld[(self$nuts + 3):((self$nuts + 2) + nut_diff)] <- "\U274C"  # cross
+          } else {
+            self$overworld[2] <- "\U1F4A4"  # zzz
+            self$overworld[3:(self$nuts + 2)] <- "\U1F330"  # nut
+          }
+
         } else {
           self$overworld <- rep("\U1F333", 25)
           self$overworld[self$n_loc] <- "\U1F330"
@@ -157,7 +163,7 @@ ActionSquirrel <- R6::R6Class(
 
         # Death emoji
         if (self$s_loc == self$o_loc) {
-          self$overworld[self$o_loc] <- "\U1F480"
+          self$overworld[self$o_loc] <- "\U1F480"  # skull
         }
 
         # Create 2D grid
@@ -175,20 +181,44 @@ ActionSquirrel <- R6::R6Class(
 
         # Owl attack routine
         if (self$s_loc == self$o_loc) {
+
           sonify::sonify(c(0, 2, 1), c(1, 1, 1), duration = 1)
-          cat("\nY O U   D I E D !")
+
+          cat(
+            "\nY O U   D I E D !",
+            "\nThe owl ate you."
+          )
+
           self$active <- FALSE  # change active state
+
         }
 
         # End game routine
         if (self$moves == 30) {
 
-          i <- 1
-          while (i < 4) {
-            i <- i + 1
-            sonify::sonify(c(0, 1), rep(1, 2), duration = 0.2)
+          if (self$nuts < 8) {  # lose
+
+            sonify::sonify(c(0, 2, 1), c(1, 1, 1), duration = 1)
+
+            cat(
+              "\nY O U   D I E D !",
+              "\nInsufficient winter nut cache!"
+            )
+
           }
-          cat("\nY O U   W I N !")
+
+          if (self$nuts >= 8) {  # win
+
+            sonify::sonify(c(0, 1), rep(1, 2), duration = 0.2)
+            sonify::sonify(c(0, 1), rep(1, 2), duration = 0.2)
+            sonify::sonify(c(0, 1), rep(1, 2), duration = 0.2)
+
+            cat(
+              "\nY O U   S U R V I V E D !",
+              "\nSufficient winter nut cache!"
+            )
+
+          }
 
           self$active <- FALSE  # change active state
 

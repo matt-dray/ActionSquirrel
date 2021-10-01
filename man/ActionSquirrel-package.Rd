@@ -4,11 +4,12 @@
 \name{ActionSquirrel-package}
 \alias{ActionSquirrel}
 \alias{ActionSquirrel-package}
-\title{ActionSquirrel: Generate An R6-Class 'Action Squirrel' Game}
+\title{ActionSquirrel: Play An R6-Class 'Action Squirrel' Game}
 \description{
 Prints to the console a grid of emoji representing a forest,
-    including a player-controlled squirrel that can be controlled by the user
-    to collect nuts and avoid the owl.
+    including a player-controlled squirrel that can be moved by the user
+    to collect nuts and avoid an owl enemy. Collect enough nuts to survive
+    winter.
 }
 \seealso{
 Useful links:
