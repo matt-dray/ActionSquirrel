@@ -1,5 +1,5 @@
 Package: ActionSquirrel
-Version: 0.0.0.9005
+Version: 0.0.0.9006
 Title: Generate An R6-Class 'Action Squirrel' Game
 Description: Prints to the console a grid of emoji representing a forest,
     including a player-controlled squirrel that can be controlled by the user
