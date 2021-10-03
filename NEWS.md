@@ -1,3 +1,7 @@
+# ActionSquirrel 0.1.0
+
+* Added blog link to README, bump 0.1.0.
+
 # ActionSquirrel 0.0.0.9007
 
 * Added nut cache win/lose scenarios (#14).

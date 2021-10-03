@@ -18,11 +18,15 @@ set.seed(2)
 
 <!-- badges: start -->
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+[![Blog
+post](https://img.shields.io/badge/rostrum.blog-post-008900?labelColor=000000&logo=data%3Aimage%2Fgif%3Bbase64%2CR0lGODlhEAAQAPEAAAAAABWCBAAAAAAAACH5BAlkAAIAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAAC55QkISIiEoQQQgghRBBCiCAIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAAh%2BQQJZAACACwAAAAAEAAQAAAC55QkIiESIoQQQgghhAhCBCEIgiAIgiAIQiAIgSAIgiAIQiAIgRAEQiAQBAQCgUAQEAQEgYAgIAgIBAKBQBAQCAKBQEAgCAgEAoFAIAgEBAKBIBAQCAQCgUAgEAgCgUBAICAgICAgIBAgEBAgEBAgEBAgECAgICAgECAQIBAQIBAgECAgICAgICAgECAQECAQICAgICAgICAgEBAgEBAgEBAgICAgICAgECAQIBAQIBAgECAgICAgIBAgECAQECAQIBAgICAgIBAgIBAgEBAgECAgECAgICAgICAgECAgECAgQIAAAQIKAAA7)](https://www.rostrum.blog/2021/10/03/squirrel/)
 <!-- badges: end -->
 
-{ActionSquirrel} is an R package containing a (very work-in-progress) interactive audio-visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). 
+{ActionSquirrel} is an R package containing an interactive audio-visual experience ('game') in the R console, powered by [{R6}](https://r6.r-lib.org/). 
 
 You play as the titular Action Squirrel. Move around the forest and collect at least eight nuts to survive winter, which happens after 30 turns. Avoid being eaten by the owl.
+
+Read more in [the accompanying blog post](https://www.rostrum.blog/2021/10/03/squirrel/). 
 
 ## How to play
 
@@ -34,6 +38,8 @@ The package is available from GitHub.
 install.packages("remotes")  # if not installed already
 remotes::install_github("matt-dray/ActionSquirrel")
 ```
+
+Note that I’ve developed and tested this only in RStudio v1.4.1717 with R v4.1.0 running on macOS Big Sur.
 
 Attach the package for instructions.
 
